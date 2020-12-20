@@ -1,0 +1,92 @@
+package ${package}.${moduleName}.controller;
+
+import java.util.Arrays;
+import java.util.Map;
+
+
+import io.renren.utils.ResultBody;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import ${package}.${moduleName}.entity.${className}Entity;
+import ${package}.${moduleName}.service.${className}Service;
+import ${mainPath}.common.utils.PageUtils;
+import ${mainPath}.common.utils.R;
+import ${mainPath}.common.utils.ResultBody;
+
+
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@RestController
+@RequestMapping("${moduleName}/${pathName}")
+public class ${className}Controller {
+    @Autowired
+    private ${className}Service ${classname}Service;
+
+    /**
+     * 列表
+     */
+    @RequestMapping("/list")
+    //@RequiresPermissions("${moduleName}:${pathName}:list")
+    public ResultBody list(@RequestParam Map<String, Object> params){
+        PageUtils page = ${classname}Service.queryPage(params);
+
+        return ResultBody.success(ResultCodeEnum.SUCCESS, page);
+    }
+
+
+    /**
+     * 信息
+     */
+    @RequestMapping("/info/{${pk.attrname}}")
+    //@RequiresPermissions("${moduleName}:${pathName}:info")
+    public ResultBody info(@PathVariable("${pk.attrname}") ${pk.attrType} ${pk.attrname}){
+		${className}Entity ${classname} = ${classname}Service.getById(${pk.attrname});
+
+        return ResultBody.success(ResultCodeEnum.SUCCESS, ${classname});
+    }
+
+    /**
+     * 保存
+     */
+    @RequestMapping("/save")
+    //@RequiresPermissions("${moduleName}:${pathName}:save")
+    public ResultBody save(@RequestBody ${className}Entity ${classname}){
+		${classname}Service.save(${classname});
+
+        return ResultBody.success();
+    }
+
+    /**
+     * 修改
+     */
+    @RequestMapping("/update")
+    //@RequiresPermissions("${moduleName}:${pathName}:update")
+    public ResultBody update(@RequestBody ${className}Entity ${classname}){
+		${classname}Service.updateById(${classname});
+
+        return ResultBody.success();
+    }
+
+    /**
+     * 删除
+     */
+    @RequestMapping("/delete")
+    //@RequiresPermissions("${moduleName}:${pathName}:delete")
+    public ResultBody delete(@RequestBody ${pk.attrType}[] ${pk.attrname}s){
+		${classname}Service.removeByIds(Arrays.asList(${pk.attrname}s));
+
+        return ResultBody.success();
+    }
+
+}

@@ -1,0 +1,70 @@
+package com.xxl.job.executor.service.jobhandler;
+
+import java.util.concurrent.TimeUnit;
+
+import org.eclipse.jetty.client.HttpClient;
+import org.eclipse.jetty.client.api.ContentResponse;
+import org.eclipse.jetty.client.api.Request;
+import org.eclipse.jetty.http.HttpMethod;
+import org.eclipse.jetty.http.HttpStatus;
+import org.springframework.stereotype.Component;
+
+import com.xxl.job.core.biz.model.ReturnT;
+import com.xxl.job.core.handler.IJobHandler;
+import com.xxl.job.core.handler.annotation.JobHandler;
+import com.xxl.job.core.log.XxlJobLogger;
+
+/**
+ * 跨平台Http任务
+ *
+ * @author xuxueli 2018-09-16 03:48:34
+ */
+@JobHandler(value = "httpJobHandler")
+@Component
+public class HttpJobHandler extends IJobHandler {
+    
+    @Override
+    public ReturnT<String> execute(String param) throws Exception {
+        XxlJobLogger.log("httpJobHandler 开始执行=:" + param);
+        // valid
+        if (param == null || param.trim().length() == 0) {
+            XxlJobLogger.log("URL Empty");
+            return FAIL;
+        }
+        
+        // httpclient
+        HttpClient httpClient = null;
+        try {
+            httpClient = new HttpClient();
+            httpClient.setFollowRedirects(false); // Configure HttpClient, for example:
+            httpClient.start(); // Start HttpClient
+            
+            // request
+            Request request = httpClient.newRequest(param);
+            request.method(HttpMethod.GET);
+            //超时1小时
+            request.timeout(60 * 60 * 1000, TimeUnit.MILLISECONDS);
+            
+            // invoke
+            ContentResponse response = request.send();
+            if (response.getStatus() != HttpStatus.OK_200) {
+                XxlJobLogger.log("Http StatusCode({}) Invalid.", response.getStatus());
+                return FAIL;
+            }
+            String responseMsg = response.getContentAsString();
+            XxlJobLogger.log("httpJobHandler 执行结束 responseMsg=:" + responseMsg);
+            return SUCCESS;
+        }
+        catch (Exception e) {
+            XxlJobLogger.log("httpJobHandler异常:", e);
+            return FAIL;
+        }
+        finally {
+            if (httpClient != null) {
+                httpClient.stop();
+            }
+        }
+        
+    }
+    
+}

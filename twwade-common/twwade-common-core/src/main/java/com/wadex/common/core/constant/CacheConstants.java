@@ -1,0 +1,42 @@
+package com.wadex.common.core.constant;
+
+/**
+ * 缓存的key 常量
+ * 
+ * @author twwade
+ */
+public class CacheConstants
+{
+    /**
+     * 令牌自定义标识
+     */
+    public static final String HEADER = "Authorization";
+
+    /**
+     * 令牌前缀
+     */
+    public static final String TOKEN_PREFIX = "Bearer ";
+
+    /**
+     * 权限缓存前缀
+     */
+    public final static String LOGIN_TOKEN_KEY = "login_tokens:";
+
+    /**
+     * 用户ID字段
+     */
+    public static final String DETAILS_USER_ID = "user_id";
+
+    /**
+     * 用户名字段
+     */
+    public static final String DETAILS_USERNAME = "username";
+    /**
+     * 权限字段
+     */
+    public static final String DETAILS_AUTHORIZATION = "authorization:";
+    /**
+     * 权限redis的key
+     */
+    public static final String HEADR_AUTHORIZATION = "authorization";
+}

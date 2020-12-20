@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.wadex.common.security.service.TokenService,\
+  com.wadex.common.security.handler.GlobalExceptionHandler

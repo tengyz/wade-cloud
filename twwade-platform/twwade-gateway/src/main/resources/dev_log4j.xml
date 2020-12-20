@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="off">
+    <properties>
+        <property name="OUTPUT_LOG_LEVEL">DEBUG</property><!-- 日志输出级别 -->
+    </properties>
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%C{36}:%L] - %msg%n"/>
+        </Console>
+    </appenders>
+
+    <loggers>
+        <logger name="org.springframework" level="INFO"/>
+        <logger name="org.springframework.web" level="INFO"/>
+        <Logger name="com.chinaunicom" level="${OUTPUT_LOG_LEVEL}" additivity="false" includeLocation="true">
+            <appender-ref ref="Console"/>
+        </Logger>
+        <Root level="INFO">
+            <appender-ref ref="Console"/>
+        </Root>
+    </loggers>
+</configuration>

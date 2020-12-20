@@ -1,0 +1,2 @@
+例如：UserBeanVo.java
+注意：以Vo结尾取名

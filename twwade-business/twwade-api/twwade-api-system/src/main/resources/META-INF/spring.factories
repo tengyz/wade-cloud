@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.wadex.system.api.factory.RemoteUserFallbackFactory,\
+  com.wadex.system.api.factory.RemoteLogFallbackFactory

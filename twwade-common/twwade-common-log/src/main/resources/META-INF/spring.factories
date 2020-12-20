@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.wadex.common.log.service.AsyncLogService,\
+  com.wadex.common.log.aspect.LogAspect
