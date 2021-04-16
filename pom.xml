@@ -234,8 +234,8 @@
     </dependencyManagement>
     <!-- twwade-business 业务模块,twwade-common 通用模块,twwade-components 组件化,twwade-platform 微服务平台公共组件 -->
     <modules>
-        <module>twwade-business</module>
         <module>twwade-common</module>
+        <module>twwade-business</module>
         <module>twwade-components</module>
         <module>twwade-platform</module>
     </modules>
@@ -257,7 +257,7 @@
     </build>
 
     <repositories>
-        <!-- maven私服地址-->
+        <!-- maven私服地址
         <repository>
             <id>my-repository</id>
             <name>my repository Mirror</name>
@@ -268,7 +268,7 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
-        </repository>
+        </repository>-->
         <repository>
             <id>Nexus aliyun</id>
             <name>my repository Mirror</name>

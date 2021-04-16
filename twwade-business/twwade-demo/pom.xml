@@ -63,12 +63,6 @@
             <artifactId>twwade-common-security</artifactId>
         </dependency>
         
-        <!-- twwade Common Datascope -->
-        <dependency>
-            <groupId>com.twwade</groupId>
-            <artifactId>twwade-common-datascope</artifactId>
-        </dependency>
-        
         <!-- twwade Common Log -->
         <dependency>
             <groupId>com.twwade</groupId>

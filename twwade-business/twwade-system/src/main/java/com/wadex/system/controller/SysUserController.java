@@ -48,14 +48,9 @@ public class SysUserController extends BaseController {
         if (StringUtils.isNull(sysUser)) {
             return R.fail("用户名或密码错误");
         }
-        //        // 角色集合
-        //        Set<String> roles = permissionService.getRolePermission(sysUser.getUserId());
-        //        // 权限集合
-        //        Set<String> permissions = permissionService.getMenuPermission(sysUser.getUserId());
+        
         LoginUser sysUserVo = new LoginUser();
         sysUserVo.setSysUser(sysUser);
-        //        sysUserVo.setRoles(roles);
-        //        sysUserVo.setPermissions(permissions);
         return R.ok(sysUserVo);
     }
     

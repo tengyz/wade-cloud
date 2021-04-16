@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.chinaunicom.common.core.utils.SpringUtils
+  com.wadex.common.core.utils.SpringUtils
 
   

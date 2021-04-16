@@ -16,7 +16,7 @@ import com.wadex.common.security.annotation.EnableRyFeignClients;
 @EnableDiscoveryClient
 @EnableRyFeignClients
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@ComponentScan(basePackages = {"com.chinaunicom.*"})
+@ComponentScan(basePackages = {"com.wadex.*"})
 public class GatewayApplication {
     public static void main(String[] args) {
         SpringApplication.run(GatewayApplication.class, args);

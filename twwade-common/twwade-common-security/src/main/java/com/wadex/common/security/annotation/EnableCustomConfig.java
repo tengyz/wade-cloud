@@ -24,9 +24,9 @@ import com.wadex.common.security.config.ApplicationConfig;
 /**
  * 统一扫描包路径
  */
-@ComponentScan(basePackages = {"com.chinaunicom"})
+@ComponentScan(basePackages = {"com.wadex"})
 // 指定要扫描的Mapper类的包的路径
-@MapperScan("com.chinaunicom.**.mapper")
+@MapperScan("com.wadex.**.mapper")
 // 开启线程异步执行
 @EnableAsync
 // 自动加载类

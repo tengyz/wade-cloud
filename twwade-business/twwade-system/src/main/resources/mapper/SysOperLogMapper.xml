@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wadex.system.mapper.SysOperLogMapper">
 
-	<resultMap type="com.wadex.law.domain.system.SysOperLog" id="SysOperLogResult">
+	<resultMap type="com.wadex.demo.domain.system.SysOperLog" id="SysOperLogResult">
 		<id     property="operId"         column="oper_id"        />
 		<result property="title"          column="title"          />
 		<result property="businessType"   column="business_type"  />

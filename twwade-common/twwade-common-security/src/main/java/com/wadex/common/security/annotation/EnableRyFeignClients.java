@@ -21,7 +21,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 public @interface EnableRyFeignClients {
     String[] value() default {};
     
-    String[] basePackages() default {"com.chinaunicom"};
+    String[] basePackages() default {"com.wadex"};
     
     Class<?>[] basePackageClasses() default {};
     

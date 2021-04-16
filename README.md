@@ -1,6 +1,5 @@
 ## tw-wade架构说明:Web Application Developer Environment Plus
 
-
 ## 平台简介
 
 * 采用前后端分离的模式，微服务版本前端(基于 [springcloud]。
@@ -27,16 +26,12 @@ com.twwade
 │ 
 ├── twwade-common          // 通用模块
 │       └── twwade-common-core                         // 核心模块
-│       └── twwade-common-datascope                    // 权限范围
 │       └── twwade-common-log                          // 日志记录
 │       └── twwade-common-redis                        // 缓存服务
 │       └── twwade-common-security                     // 安全模块
 │  
 ├── twwade-business           // 业务模块
 │       └── twwade-system                              // 系统模块 [9204]
-│       └── twwade-template                            // 标准文本管理模块[9205]
-│       └── twwade-scene                               // scene场景管理模块 [9206]
-│       └── twwade-report                              // 综合查询模块 [9207]
 │       └── twwade-demo                                // demo模块 [9999]
 │       └── twwade-demo                                // 系统模块 [9208]
 │       └── twwade-gen                                 // 代码生成 [9203]
@@ -117,3 +112,5 @@ http://apidocjs.com
 npm  install apidoc -g
 生成
 apidoc -i msb-modules/ -o apidoc/
+5.验证码接口地址
+http://网关ip:9100/code
