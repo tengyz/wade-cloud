@@ -257,18 +257,7 @@
     </build>
 
     <repositories>
-        <!-- maven私服地址
-        <repository>
-            <id>my-repository</id>
-            <name>my repository Mirror</name>
-            <url>http://10.236.15.151:8082/nexus/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>-->
+        <!-- maven私服地址-->
         <repository>
             <id>Nexus aliyun</id>
             <name>my repository Mirror</name>
@@ -297,12 +286,12 @@
         <repository>
             <id>nexus-releases</id>
             <name>Nexus Releases Repository</name>
-            <url>http://10.236.15.151:8082/nexus/content/repositories/releases/</url>
+            <url>http://127.0.0.1:8082/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
             <id>nexus-snapshots</id>
             <name>Nexus Snapshots Repository</name>
-            <url>http://10.236.15.151:8082/nexus/content/repositories/snapshots/</url>
+            <url>http://127.0.0.1:8082/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
